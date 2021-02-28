@@ -181,6 +181,18 @@ mount /dev/vg/home /mnt/home
 swapon /dev/vg/swap
 ```
 
+```
+ERROR device 'dev/mapper/vg-root' not found. Skipping fsck. 
+mount /new_root: no filesystem type specified. 
+```
+Had root-/dev/mapper/root and also /dev/vg/root not sure if that matters. 
+
+It should be cryptdevice=UUID=device-UUID:root root=/dev/mapper/root  
+
+cryptdevice=UUID=device-UUID:root root=/dev/mapper/root  
+
+IS IT DUE TO MISPLACING HOOKS? ORDER MATTERS
+
 ## Move from one partition to another 
 
 What you want is rsync.
